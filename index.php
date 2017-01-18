@@ -12,6 +12,7 @@
   <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
   <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
   <meta name="author" content="Codrops" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -32,10 +33,10 @@
 
   <div class="site-wrapper-inner">
 
-    <div class="container-fluid">
+
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-xs-0 col-md-offset-2 col-xs-offset-0">
+          <div class="col-md-6 col-xs-1 col-md-offset-2 col-xs-offset-0">
             <div class="masthead clearfix">
               <div class="inner">
                 <h3 class="masthead-brand">Steam</h3>
@@ -52,35 +53,38 @@
             </div>
           </div>
         </div>
-    </div>
+      </div>
+
 
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-2 center">
-            <img class="img-responsive form_img_1" src="img/battlefield_1.png">
 
-            <h3 id="sub_img">Actualités</h3>
-          </div>
-          <div class="col-md-4  col-md-offset-2 center"
-              <div class="inner cover">
-                <h1 class="cover-heading form-h1">STEAM</h1>
-                <p class="lead subtitles_1">" Bienvenue sur steam la plateforme de jeux la plus utilisé par les joueurs "</p>
-                <p class="lead">
-                  <div class="row">
-                  <div class="col-xs-5 col-xs-offset-1"><a href="#" class="btn btn-lg btn-default">Bibliotheque</a></div>
-                  <div class="col-xs-5"><a href="#" class="btn btn-lg btn-default">Magasin</a></div>
+         <div class="col-md-2 "><img class=" form_img_1" src="img/battlefield_1.png"></div>
+
+
+          <div class="col-md-6  col-md-offset-1 center ">
+
+                  <div class="inner cover " style="padding-top: 30%;">
+                    <h1 class="cover-heading form-h1">STEAM</h1>
+                    <p class="lead subtitles_1">" Bienvenue sur steam la plateforme de jeux la plus utilisé par les joueurs "</p>
+                    <p class="lead">
+                      <div class="row">
+                      <div class="col-xs-5 col-xs-offset-1"><a href="#" class="btn btn-lg btn-default">Bibliotheque</a></div>
+                      <div class="col-xs-5"><a href="#" class="btn btn-lg btn-default">Magasin</a></div>
+                      </div>
+                    </p>
                   </div>
-                </p>
-              </div>
-          </div>
-      </div>
 
+
+
+
+      </div>
+          <div class="col-md-offset-1 col-md-2 "><img class=" form_img_2" src="img/forhonor.jpg"></div>
 
     </div>
 
   </div>
 
-</div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

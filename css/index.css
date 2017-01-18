@@ -174,6 +174,7 @@ body {
 }
 
 body{
+    z-index: ;
     background: url("http://wallup.net/wp-content/uploads/2015/12/116078-Star_Wars-planet-moon-battle-space_art.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -182,14 +183,81 @@ body{
 
 
 }
+
 .form_img_1{
     overflow: hidden;
-    width: 300px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
+    height: 960px;
+    width: 600px;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
+}
+
+.form_img_2{
+
+    float: right;
+    overflow: hidden;
+    height: 960px;
+    width: 600px;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
 }
 
 #sub_img{
     background-color: #0f0f0f;
     margin-top: 0px !important;
+}
+
+.z-index-1 {
+    position: absolute;
+
+}
+.col-md-2 img{
+    animation-name: fadeInLeft;
+    animation-duration: 2s;
+    -webkit-animation-name: fadeInLeft; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+}
+@keyframes fadeInLeft {
+    from{
+        margin-left: 70%;
+        margin-right: 70%;
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    to{
+        margin-left: 0%;
+        margin-right: 0%;
+        opacity:1;}
+}
+
+@media (max-width: 1600px) {
+    .form_img_2{
+        height: 700px;
+        width: 500px;
+    }
+    .form_img_1{
+        height: 700px;
+        width: 500px;
+    }
+}
+@media (max-width: 1024px) {
+    .form_img_2{
+        height: 700px;
+        width: 350px;
+    }
+    .form_img_1{
+        height: 700px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 1022px) {
+    .form_img_2{
+        display: none;
+    }
+    .form_img_1{
+display: none;
+    }
 }
