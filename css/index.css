@@ -193,3 +193,13 @@ body{
     background-color: #0f0f0f;
     margin-top: 0px !important;
 }
+
+.ion-ios-cart{
+  font-size: 30px !important;
+}
+
+
+.ion-log-out{
+  margin-left: px !important;
+  font-size: 30px !important;
+}
