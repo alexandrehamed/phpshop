@@ -237,8 +237,18 @@ body{
         margin-right: 0%;
         opacity:1;}
 }
+@media (min-width:1500px) and (max-width: 1550px) {
+    .form_img_2{
 
-@media (min-width:1301px ) and (max-width: 1600px) {
+        height: 600px;
+        width: 400px;
+    }
+    .form_img_1{
+        height: 600px;
+        width: 400px;
+    }
+}
+@media (min-width:1301px ) and (max-width: 1300px) {
     .form_img_2{
         height: 700px;
         width: 500px;
