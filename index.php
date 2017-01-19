@@ -64,7 +64,7 @@
 
           <div class="col-md-6  col-md-offset-1 center ">
 
-                  <div class="inner cover " style="padding-top: 30%;">
+                  <div class="inner cover " style="padding-top: 15%;">
                     <h1 class="cover-heading form-h1">STEAM</h1>
                     <p class="lead subtitles_1">" Bienvenue sur steam la plateforme de jeux la plus utilisé par les joueurs "</p>
                     <p class="lead">
