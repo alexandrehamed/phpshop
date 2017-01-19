@@ -46,7 +46,7 @@
                     <li><a href="#">Magasin</a></li>
                     <li><a href="#">Bibliotheque</a></li>
                     <li><a href="#">panier</a></li>
-                    <li><a href="#">Deconnection</a></li>
+                    <li><a href="#">Deconnexion</a></li>
                   </ul>
                 </nav>
               </div>
@@ -79,9 +79,12 @@
 
 
       </div>
-          <div class="col-md-offset-1 col-md-2 "><img class=" form_img_2" src="img/forhonor.jpg"></div>
+          <div class="col-md-offset-1 col-md-2 " style="padding: 0px;">
+            <img class=" form_img_2" src="img/forhonor.jpg">
+          </div>
 
     </div>
+
 
   </div>
 

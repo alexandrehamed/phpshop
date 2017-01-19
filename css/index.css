@@ -26,6 +26,11 @@ a:hover {
 
 html,
 body {
+    background: url(img/bg1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 100%;
     background-color: #333;
 }
@@ -186,8 +191,8 @@ body{
 
 .form_img_1{
     overflow: hidden;
-    height: 960px;
-    width: 600px;
+    height: 700px;
+    width: 450px;
     -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
 }
@@ -196,8 +201,8 @@ body{
 
     float: right;
     overflow: hidden;
-    height: 960px;
-    width: 600px;
+    height: 700px;
+    width: 450px;
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
 }
@@ -211,6 +216,7 @@ body{
     position: absolute;
 
 }
+
 .col-md-2 img{
     animation-name: fadeInLeft;
     animation-duration: 2s;
@@ -232,7 +238,7 @@ body{
         opacity:1;}
 }
 
-@media (max-width: 1600px) {
+@media (min-width:1301px ) and (max-width: 1600px) {
     .form_img_2{
         height: 700px;
         width: 500px;
@@ -242,15 +248,21 @@ body{
         width: 500px;
     }
 }
-@media (max-width: 1024px) {
-    .form_img_2{
-        height: 700px;
-        width: 350px;
+
+@media (max-width: 1300px;) {
+    .form_img_2 {
+        height: 500px;
+        width: 300px;
+        display: none;
+
     }
-    .form_img_1{
-        height: 700px;
-        width: 350px;
+
+    .form_img_1 {
+        height: 500px;
+        width: 300px;
+        display: none;
     }
+
 }
 
 @media (max-width: 1022px) {
