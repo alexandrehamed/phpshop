@@ -72,14 +72,14 @@
                       <div class="col-xs-5 col-xs-offset-1"><div class="contianer">
                           <section>
                             <div class="sup-container">
-                              <input type="submit" value="button" id="bu-bu"/>
+                              <input type="submit" value="bibliotheque" id="bu-bu"/>
                               <div class="ease"></div>
                             </div>
                           </section>
                         </div></div>
-                      <div class="col-xs-5"><section>
+                      <div class="col-xs-5 col-xs-offset-1""><section>
                           <div class="sup-container">
-                            <input type="submit" value="button" id="bu-bu"/>
+                            <input type="submit" value="magasin" id="bu-bu"/>
                             <div class="ease"></div>
                           </div>
                         </section></div>

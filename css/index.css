@@ -336,8 +336,8 @@ section
 section #bu-bu
 {
     float: left;
-    width:300px;
-    max-width: 300px;
+    width:200px;
+    max-width: 200px;
     border: 2px solid #f7f7f7;
     background-color: black;
     padding: 15px;
