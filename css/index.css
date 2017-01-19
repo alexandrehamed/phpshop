@@ -191,7 +191,7 @@ body{
 
 .form_img_1{
     overflow: hidden;
-    height: 40vw;
+    height: 35vw;
     width: 30vw;
     -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
@@ -201,7 +201,7 @@ body{
 
     float: right;
     overflow: hidden;
-    height: 40vw;
+    height: 35vw;
     width: 30vw;
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
