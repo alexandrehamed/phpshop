@@ -247,3 +247,137 @@ body{
 display: none;
     }
 }
+
+/* ANIM BTN*/
+@background-color1: #e74c3c;
+@background-color2: #f39c12;
+@background-color: #000110;
+@ease: white;
+@color: #27ae60;
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: @background-color;
+}
+
+h2
+{
+    text-align: center;
+    margin-top: 20px;
+    color: @ease;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 30px;
+}
+
+h2 span
+{
+    color: @background-color1;
+}
+
+.button-hover
+{
+    width: 300px;
+    height: 64px;
+    font: normal normal 700 1em/4em Arial,sans-serif;
+    overflow: hidden;
+    background-color: @background-color1;
+    margin: 50px auto;
+    border-radius: 4px;
+}
+
+.button-hover a
+{
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    display: block;
+}
+
+.button-hover, .link
+{
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.button-hover:hover
+{
+    background-color: @background-color2;
+}
+
+.button-hover:hover .link
+{
+    margin-top: -4em;
+}
+/* End button [1] */
+
+.contianer
+{
+    width: 100%;
+    margin: auto;
+}
+
+section
+{
+    margin: 50px 0;
+    max-width: 300px;
+    margin: 0 auto 0 auto;
+}
+
+section #bu-bu
+{
+    float: left;
+    width:300px;
+    max-width: 300px;
+    border: 2px solid #f7f7f7;
+    background-color: black;
+    padding: 15px;
+    cursor: pointer;
+    color: #f7f7f7;
+    font-family: tahoma;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 3px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+section #bu-bu:hover
+{
+    background-color: rgba(0,0,0,0);
+    color: @color;
+}
+
+.ease
+{
+    width: 0;
+    height: 55px;
+    bnackground-color: @ease;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.sup-container:hover .ease
+{
+    width: 100%;
+    max-width: 300px;
+    background-color: @ease;
+    border: 0;
+}
+
+/* End Button [2] */

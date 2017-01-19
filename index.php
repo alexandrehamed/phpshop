@@ -36,7 +36,7 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-xs-1 col-md-offset-2 col-xs-offset-0">
+          <div class="col-md-6 col-md-offset-2 ">
             <div class="masthead clearfix">
               <div class="inner">
                 <h3 class="masthead-brand">Steam</h3>
@@ -69,8 +69,20 @@
                     <p class="lead subtitles_1">" Bienvenue sur steam la plateforme de jeux la plus utilisé par les joueurs "</p>
                     <p class="lead">
                       <div class="row">
-                      <div class="col-xs-5 col-xs-offset-1"><a href="#" class="btn btn-lg btn-default">Bibliotheque</a></div>
-                      <div class="col-xs-5"><a href="#" class="btn btn-lg btn-default">Magasin</a></div>
+                      <div class="col-xs-5 col-xs-offset-1"><div class="contianer">
+                          <section>
+                            <div class="sup-container">
+                              <input type="submit" value="button" id="bu-bu"/>
+                              <div class="ease"></div>
+                            </div>
+                          </section>
+                        </div></div>
+                      <div class="col-xs-5"><section>
+                          <div class="sup-container">
+                            <input type="submit" value="button" id="bu-bu"/>
+                            <div class="ease"></div>
+                          </div>
+                        </section></div>
                       </div>
                     </p>
                   </div>
