@@ -231,6 +231,11 @@ input:focus {
 }
 
 
+.games_list{
+    background-color: black;
+    color: white;
+}
+
 @media (max-width: 1024px) {
     .box_games{
         padding: 1px;
@@ -239,4 +244,12 @@ input:focus {
     .form_p{
         font-size: 15px;
     }
+}
+
+.amis{
+background-color: #222222;
+    color: white;
+    float: right;
+    padding: 5px;
+    border-radius: 5px;
 }
