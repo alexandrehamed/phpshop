@@ -29,31 +29,7 @@
 
 <body>
 
-<div class="site-wrapper">
-
-  <div class="site-wrapper-inner">
-
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-2 ">
-            <div class="masthead clearfix">
-              <div class="inner">
-                <h3 class="masthead-brand">Steam</h3>
-                <nav>
-                  <ul class="nav masthead-nav">
-                    <li class="active"><a href="#">Accueil</a></li>
-                    <li><a href="#">Magasin</a></li>
-                    <li><a href="#">Bibliotheque</a></li>
-                    <li><a href="#">panier</a></li>
-                    <li><a href="#">Deconnexion</a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<?php include "header.php";?>
 
 
       <div class="container-fluid">
@@ -65,11 +41,11 @@
           <div class="col-md-6  col-md-offset-1 center ">
 
                   <div class="inner cover " style="padding-top: 15%;">
-                    <h1 class="cover-heading form-h1">STEAM</h1>
+                    <h1 class="cover-heading form-h1">ST<span style="color: orange">IIM</span></h1>
                     <p class="lead subtitles_1">" Bienvenue sur steam la plateforme de jeux la plus utilisé par les joueurs "</p>
                     <p class="lead">
                       <div class="row">
-                      <div class="col-xs-5 col-xs-offset-1"><div class="contianer">
+                      <div class="col-sm-5 col-xs-offset-1"><div class="contianer">
                           <section>
                             <div class="sup-container">
                               <input type="submit" value="bibliotheque" id="bu-bu"/>
@@ -77,7 +53,7 @@
                             </div>
                           </section>
                         </div></div>
-                      <div class="col-xs-5 col-xs-offset-1""><section>
+                      <div class="col-sm-5 col-xs-offset-1""><section>
                           <div class="sup-container">
                             <input type="submit" value="magasin" id="bu-bu"/>
                             <div class="ease"></div>
