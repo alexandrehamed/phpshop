@@ -15,7 +15,7 @@
                                     <li><a href="magasin.php">Magasin</a></li>
                                     <li><a href="bibliotheque.php">Bibliotheque</a></li>
                                     <li><a href="#">panier</a></li>
-                                    <li><a href="#">Deconnexion</a></li>
+                                    <li><a href="deconnexion.php">Deconnexion</a></li>
                                 </ul>
                             </nav>
                         </div>

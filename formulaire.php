@@ -1,5 +1,6 @@
 <?php
 include ('db.php');
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
@@ -99,3 +100,6 @@ include ('db.php');
         </div>
     </body>
 </html>
+<?php
+
+?>

@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include ('db.php')
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
@@ -51,10 +51,12 @@ include "db.php";
         <div class="col-md-6 col-md-offset-3 ">
 
                 <div class="gallery">
+
                     <?php
-                    $request= $db->prepare("SELECT jeux.nom, jeux.resume, jeux.prix, jeux.image, jeux.pegi, categorie.nom FROM jeux INNER JOIN categorie ON jeux.categorie = categorie.id WHERE jeux.id = :id ");
-                    $request->execute(array(
-                        "id"=> $id,
+                    $request= $db->prepare("
+                  SELECT jeux.id, jeux.nom, jeux.resume, jeux.prix, jeux.image, jeux.pegi, categorie.nom FROM jeux INNER JOIN categorie ON jeux.categorie = categorie.id ");
+                    $request->execute(
+                        array(
                     ));
 
                     ?>
@@ -65,7 +67,7 @@ include "db.php";
                     <ul>
                         <li>
                             <h2><?php echo $data ["nom"];?></h2>
-                            <a href="http://pixabay.com/en/birkenau-auschwitz-concentration-402324/" title="Birkenau" target="_blank">
+                            <a href="#" title="" target="_blank">
                                 <img src="<?php echo $data ["image"];?>" alt="" />
                                 <div class="info"><h1 class="title"><?php echo $data ["resume"];?></h1></div>
                             </a>
@@ -184,3 +186,5 @@ include "db.php";
 </script>
 </body>
 </html>
+<?php
+?>

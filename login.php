@@ -1,5 +1,5 @@
 <?php
-include ('db.php'); 
+include ('db.php')
 ?>
 <?php
 if(isset($_POST["pseudo"]) and isset($_POST["password"])){
