@@ -1,100 +1,71 @@
+<?php
+// on se connecte à MySQL
+$db = mysql_connect('localhost', 'root', 'root');
+mysql_select_db('mydb',$db);
+
+if(isset($_POST) && !empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
+$_POST['mdp'] = hash("pseudo", $_POST['mdp']);
+  extract($_POST);
+  // on recupére le password de la table qui correspond au login du visiteur
+  $sql = "select mdp from users where pseudo='".$user."'";
+  $req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+  $data = mysql_fetch_assoc($req);
+
+  if($data['mdp'] != $password) {
+    echo '<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert">x</button>
+  <strong>Oh Non !</strong> Mauvais login / password. Merci de recommencer !
+</div>';
+  }
+
+  else {
+    session_start();
+    $_SESSION['pseudo'] = $login;
+
+    echo '<div class="alert alert-dismissable alert-success">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>Yes !</strong> Vous etes bien logué, Redirection dans 5 secondes ! <meta http-equiv="refresh" content="5; URL=dashboard">
+</div>';
+    // ici vous pouvez afficher un lien pour renvoyer
+    // vers la page d'accueil de votre espace membres
+  }
+}
+else {
+  $champs = '<p><b>(Remplissez tous les champs pour vous connectez !)</b></p>';
+}
+
+
+?>
+
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="UTF-8" />
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-        <title>Login and Registration Form with HTML5 and CSS3</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico">
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/login.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
-    </head>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
+    <form method="post" action="">
 
+    <legend>Connexion au Panel</legend>
 
-    
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Login</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="login" placeholder="Login">
+      </div>
+    </div><br/><br/><br/>
 
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Mot de passe</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" name="password" placeholder="Mot de passe">
+      </div>
+    </div>
 
-    <body>
-        <div class="container">
-            <!-- Codrops top bar -->
-            <div class="codrops-top">
+<br/><br/><center><button type="submit" name="submit" class="btn btn-primary">Connexion</button></center>
+</form>
 
-
-                <div class="clr"></div>
-            </div><!--/ Codrops top bar -->
-
-            <section>
-                <div id="container_demo" >
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
-                        <div id="login" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on">
-                                <h1>Log in</h1>
-                                <p>
-                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
-                                </p>
-                                <p>
-                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
-                                </p>
-                                <p class="keeplogin">
-									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
-									<label for="loginkeeping">Keep me logged in</label>
-								</p>
-                                <p class="login button">
-                                    <input type="submit" value="Login" />
-								</p>
-                                <p class="change_link">
-									Not a member yet ?
-									<a href="#toregister" class="to_register">Join us</a>
-								</p>
-                            </form>
-                        </div>
-
-                        <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on">
-                                <h1> Sign up </h1>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-                                </p>
-                                <p>
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
-                                </p>
-                                <p>
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p>
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p class="signin button">
-									<input type="submit" value="Sign up"/>
-								</p>
-                                <p class="change_link">
-									Already a member ?
-									<a href="#tologin" class="to_register"> Go and log in </a>
-								</p>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        </div>
-    </body>
+  </body>
 </html>

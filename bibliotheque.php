@@ -1,9 +1,6 @@
+<?php require_once("conf.php") ?>
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8" />
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
@@ -21,7 +18,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
-
+<?php include_once("header.php")?>
 
 </head>
 
@@ -31,7 +28,7 @@
 
 <body>
 
-<?php include("header.php")?>
+
 
 <div class="container-fluid margin_t_50">
     <div class="row ">
@@ -84,9 +81,10 @@
                 </button>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
+                <select class="texte" name="id">
+
+
+                </select>
                 </ul>
 
             </div>
@@ -94,6 +92,45 @@
 
 
         <input class="margin_t_30" type="search" placeholder="jeux"" title="Search" />
+        <?php
+header('Content-Type: text/html; charset=UTF-8');
+
+// connexion bdd
+$BDD_hote = 'localhost';
+$BDD_bd = 'mydb';
+$BDD_utilisateur = 'pseudo';
+$BDD_mot_passe = 'mdp';
+
+if(isset($_POST['search'])) {
+
+$chainesearch = addslashes($_POST['search']);
+
+echo 'Vous avez recherché : ' . $chainesearch . '<br />';
+
+	try{
+		$bdd = new PDO('mysql:host='.$BDD_hote.';dbname='.$BDD_bd, $BDD_utilisateur, $BDD_mot_passe);
+		$bdd->exec("SET CHARACTER SET utf8");
+		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	}
+		catch(PDOException $e){
+		echo 'Erreur : '.$e->getMessage();
+		echo 'N° : '.$e->getCode();
+	}
+
+	$requete = "SELECT * from jeux WHERE nom LIKE '". $chainesearch;
+
+    // Exécution de la requête SQL
+    $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
+    echo 'Les résultats de recherche sont : <br />';
+    while($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
+	echo $donnees['pseudo'] .'<br />';
+	}
+
+}
+
+var_dump ($requete);
+
+?>
             <div class="box_games">
                 <div class="row border_style">
                     <div class="col-md-3 col-sm-3 col-sm-offset-1"><img src="img/ms.jpg" class="img-responsive"></div>

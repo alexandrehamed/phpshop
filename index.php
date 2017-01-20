@@ -42,7 +42,7 @@
           <div class="col-md-6 col-md-offset-2 ">
             <div class="masthead clearfix">
               <div class="inner">
-                <h3 class="masthead-brand">Steam</h3>
+                <h3 class="masthead-brand"></h3>
                 <nav>
                   <ul class="nav masthead-nav">
                     <li class="active"><a href="#">Accueil</a></li>
@@ -57,7 +57,7 @@
           </div>
         </div>
       </div>
->>>>>>> b2d2490d8d8dcd8a7b31498bc022f64ee75e04b6
+
 
 
       <div class="container-fluid">
