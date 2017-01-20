@@ -1,0 +1,108 @@
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover; 
+    display: block;
+}
+
+#disney_logo{
+    margin-left: 0px;
+     -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; 
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s; 
+            animation: fadein 2s;
+}
+#btn_1{
+    width:110px;
+    height:110px;
+    
+    font:bold 16px Arial;
+    border-radius:50%;
+    margin: 10px;
+     -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; 
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s; 
+            animation: fadein 2s;
+    display: inline-block;
+
+}
+#btn_1 a p {
+    margin-bottom: 100px;
+}
+.menu ul{
+text-align: center;
+margin-top: 20px;
+
+}
+
+.menu li{
+    display: inline-block;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+.menu a{
+    text-decoration: none;
+    color: #fff;
+}
+#btn_1 a:link{
+    text-decoration: none;
+
+}
+#btn_1 a:hover{
+    color: white;
+}
+
+.menu p {
+    margin-top: 40px;
+}
+
+#btn_1 :hover{
+     -webkit-animation-name: rotation;
+    -webkit-animation-iteration:;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-duration: 0.75s;
+
+}
+.anim :hover{
+    -ms-transform: scale(1.5,1.5); /* IE 9 */
+    -webkit-transform: scale(1.5,1.5); /* Safari */
+    transform: scale(1.5,1.5); /* Standard syntax */
+}
+.footer{
+position:fixed;
+bottom:0;
+left:0;
+height:35px;
+width: 100%;
+background: #66b3ff;
+}
+.footer h3{
+text-align: center;
+}
+
+@-webkit-keyframes rotation{
+    from{-webkit-transform: rotate(0deg);}
+    to{-webkit-transform: rotate(360deg);}
+
+}
+@keyframes fadein{
+    from { opacity:0;}
+    to { opacity:1; }
+}
+
+
+
+

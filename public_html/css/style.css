@@ -1,0 +1,241 @@
+.background_image_index{
+
+ background-size: cover;
+        background-image: url(https://secure.parksandresorts.wdpromedia.com/media/disneyparks/blog/wp-content/uploads/2013/10/HOL444888.jpg);
+  background-repeat: no-repeat;
+  background-position : top center ;
+background-attachment: fixed;
+
+    
+}
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 2;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover; 
+    display: block;
+}
+#steve{
+    opacity: 0.9;
+}
+
+#disney_logo{
+
+     -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; 
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s; 
+            animation: fadein 2s;
+}
+#btn_1{
+    width:160px;
+    height:160px;
+    background:#cc0000;
+    font:bold 16px Arial;
+    border-radius:50%;
+    color:#fff;
+     -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; 
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s; 
+            animation: fadein 2s;
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+
+}
+
+.rond{
+    vertical-align: center;
+    width:120px;
+    height:120px;
+    background:#cc0000;
+    font:bold 13px Arial;
+    border-radius:50% !important    ;
+    border:none;
+    color:#fff;
+   -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; 
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s; 
+            animation: fadein 2s;
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+
+
+
+
+
+}
+
+.rond{ transition: all .2s ease-in-out; }
+.rond:hover{ -webkit-transform: scale(1.5,1.5);
+-moz-transform: scale(1.5,1.5);
+-o-transform: scale(1.5,1.5);
+transform: scale(1.5,1.5);}
+
+.fadeIn_steve{
+         -webkit-animation: fadein 2s;
+       -moz-animation: fadein 2s; 
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s; 
+            animation: fadein 2s;
+}
+
+
+
+@keyframes scale{
+    from{ height: 120px; width: 120px;}
+    to {height: 150px; width: 150px}
+
+}
+
+@keyframes fadein{
+    from { opacity:0;}
+    to { opacity:1; }
+}
+
+
+
+
+/* Histoire.php*/
+
+
+h2{
+    
+  }
+
+.carousel-concept {
+ margin-left: 0px;
+ display: inline-block;
+} 
+
+.carousel-concept:hover {
+ 
+}
+.carousel-systeme{
+display: inline-block;
+}
+.carousel-description{
+display: inline-block;
+}
+.btn_concept{
+
+}
+.btn_description{
+
+}
+.btn_systeme{
+
+}
+.display{
+    display: none;
+}
+.overflow{
+    overflow: hidden;
+}
+
+.overflow-content{
+    width: 3000px;
+    height: 300px;
+
+}
+.arial{
+    font-size: 14px !important;
+}
+
+.background_image_histoire{
+    background: url(https://i.ytimg.com/vi/n0J33AVnchc/maxresdefault.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    }
+.form{
+    float: left;
+    height: 200px;
+    width: 300px;
+    padding: 18px;
+}
+.jumbotron h2{
+    font-family: 'Lora', serif;
+    font-size: 50px;
+}
+
+/* avis.php*/
+
+.background_photo{
+    background: url(https://i.ytimg.com/vi/pco4t0EEqxw/maxresdefault.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position : top center ;
+    background-attachment: fixed;
+}
+
+.grayscale:hover{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+
+}
+
+/*actualites*/
+.background_actualites{
+    background: url(http://www.vivre-au-panama.com/wp-content/uploads/actualite-panama.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position : top center ;
+    background-attachment: fixed;
+}
+
+/*contacter.php*/
+.background_contacter{
+    background: url(https://i.ytimg.com/vi/o9sysl9RYw0/maxresdefault.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position : top center ;
+    background-attachment: fixed;
+}
+
+/*Dashboard.php*/
+.title_dashboard{
+    font-family: 'Merriweather', serif;
+}
+
+.post_head{
+    background-color: grey;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Merriweather', serif;
+}
+.actu_head{
+    background-color: grey;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    font-family: 'Merriweather', serif;
+
+}
+.post_content{
+    background-color: #e6e6e6;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/*post_list*/
+.margin_list{
+    margin: 10px;
+}
