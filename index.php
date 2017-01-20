@@ -43,7 +43,7 @@
                 <nav>
                   <ul class="nav masthead-nav">
                     <li class="active"><a href="#">Accueil</a></li>
-                    <li><a href="#">Magasin</a></li>
+                    <li><a href="magasin.php">Magasin</a></li>
                     <li><a href="#">Bibliotheque</a></li>
                     <li><a href="#">panier</a></li>
                     <li><a href="#">Deconnexion</a></li>
