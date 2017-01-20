@@ -1,6 +1,62 @@
 .pp{
   height:20vw;
 }
+
 body{
-  background: url("../img/light-blaze.jpg");
+    z-index: ;
+
+    background: url("http://marvelll.fr/wp-content/uploads/2014/08/interstellar-photo-espace.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:white;
+}
+h1{
+  color:orange;
+}
+h2{
+  color:orange;
+}
+.pseudo{
+  color:white;
+}
+.part1{
+  margin-top:5vh;
+}
+.btnA{
+  margin-top:8.5vh;
+  background-color:black;
+  color:white;
+  border:white, 2px;
+  width:10vw;
+}
+.btnA:hover{
+  color:orange;
+  background-color:black;
+}
+.ion-wrench{
+font-size:30px;
+color:orange;
+position:absolute;
+margin-top:2vh;
+}
+.ion-wrench:hover{
+  color:white;
+}
+.description{
+  color:white;
+  font-size:2em;
+  margin-top:10vh;
+}
+ul.informations{
+  list-style-type: none;
+}
+.informations{
+  font-size:1.5em;
+}
+hr{
+  height: 12px;
+   border: 0;
+   box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.5);
 }

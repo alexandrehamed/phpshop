@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost
--- Généré le :  Mer 18 Janvier 2017 à 11:22
+-- Généré le :  Ven 20 Janvier 2017 à 01:37
 -- Version du serveur :  5.6.34
 -- Version de PHP :  7.1.0
 
