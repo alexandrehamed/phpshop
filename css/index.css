@@ -26,6 +26,11 @@ a:hover {
 
 html,
 body {
+    background: url(img/bg1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 100%;
     background-color: #333;
 }
@@ -174,6 +179,7 @@ body {
 }
 
 body{
+    z-index: ;
     background: url("http://wallup.net/wp-content/uploads/2015/12/116078-Star_Wars-planet-moon-battle-space_art.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -182,11 +188,23 @@ body{
 
 
 }
+
 .form_img_1{
     overflow: hidden;
-    width: 300px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
+    height: 35vw;
+    width: 30vw;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
+}
+
+.form_img_2{
+
+    float: right;
+    overflow: hidden;
+    height: 35vw;
+    width: 30vw;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
 }
 
 #sub_img{
@@ -194,6 +212,7 @@ body{
     margin-top: 0px !important;
 }
 
+<<<<<<< HEAD
 .ion-ios-cart{
   font-size: 30px !important;
 }
@@ -203,3 +222,174 @@ body{
   margin-left: px !important;
   font-size: 30px !important;
 }
+=======
+.z-index-1 {
+    position: absolute;
+
+}
+
+.col-md-2 img{
+    animation-name: fadeInLeft;
+    animation-duration: 2s;
+    -webkit-animation-name: fadeInLeft; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+}
+@keyframes fadeInLeft {
+    from{
+        margin-left: 70%;
+        margin-right: 70%;
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    to{
+        margin-left: 0%;
+        margin-right: 0%;
+        opacity:1;}
+}
+
+
+@media (max-width: 1022px) {
+    .form_img_2{
+        display: none;
+    }
+    .form_img_1{
+display: none;
+    }
+}
+
+/* ANIM BTN*/
+@background-color1: #e74c3c;
+@background-color2: #f39c12;
+@background-color: #000110;
+@ease: white;
+@color: #27ae60;
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: @background-color;
+}
+
+h2
+{
+    text-align: center;
+    margin-top: 20px;
+    color: @ease;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 30px;
+}
+
+h2 span
+{
+    color: @background-color1;
+}
+
+.button-hover
+{
+    width: 300px;
+    height: 64px;
+    font: normal normal 700 1em/4em Arial,sans-serif;
+    overflow: hidden;
+    background-color: @background-color1;
+    margin: 50px auto;
+    border-radius: 4px;
+}
+
+.button-hover a
+{
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    display: block;
+}
+
+.button-hover, .link
+{
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.button-hover:hover
+{
+    background-color: @background-color2;
+}
+
+.button-hover:hover .link
+{
+    margin-top: -4em;
+}
+/* End button [1] */
+
+.contianer
+{
+    width: 100%;
+    margin: auto;
+}
+
+section
+{
+    margin: 50px 0;
+    max-width: 300px;
+    margin: 0 auto 0 auto;
+}
+
+section #bu-bu
+{
+    float: left;
+    width:200px;
+    max-width: 200px;
+    border: 2px solid #f7f7f7;
+    background-color: black;
+    padding: 15px;
+    cursor: pointer;
+    color: #f7f7f7;
+    font-family: tahoma;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 3px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+section #bu-bu:hover
+{
+    background-color: rgba(0,0,0,0);
+    color: @color;
+}
+
+.ease
+{
+    width: 0;
+    height: 55px;
+    bnackground-color: @ease;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.sup-container:hover .ease
+{
+    width: 100%;
+    max-width: 300px;
+    background-color: @ease;
+    border: 0;
+}
+
+/* End Button [2] */
+>>>>>>> alex
