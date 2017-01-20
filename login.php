@@ -1,3 +1,47 @@
+<?php
+session_start();
+include ("db.php");
+
+		if (isset($_POST["pseudo"]) &&
+			isset($_POST["password"]))
+			  {
+	$pseudo = htmlspecialchars($_POST["pseudo"]);
+	$password = htmlspecialchars($_POST["password"]);
+	// préparation de la requête : est-ce qu'un membre avec ce pseudo existe ?
+	$request = $db->prepare("SELECT id, is_admin FROM members WHERE pseudo LIKE :pseudo AND password = :password");
+	$request->execute(
+		array(
+			"pseudo" => $pseudo,
+			"password" => $password
+		)
+	);
+//fetchAll renvoie un tableau avec tous les membres correspondant à la requête
+$members = $request->fetchAll();
+// si il y en a plus de 0, c'est qu'un membre avec ces identifiants existe. On le connecte.
+if (sizeof($members) > 0) {
+	//on récupère l'id du membre (le[0] est le premier du tableau)
+	//(et le seul puisqu'on n'autorise pas les doublons)
+	$id_member = $members[0]["id"];
+
+	//on crée la variable de session qui nou permettra de savoir qu'il est connecté
+	$_SESSION["id_member"] = $id_member;
+	$is_admin = $members[0]["is_admin"];
+
+	//on crée la variable de session qui nou permettra de savoir qu'il est connecté
+	$_SESSION["is_admin"] = $is_admin;
+	header("Location:index.php");
+}
+//mauvais identifiants
+else {
+	echo "Error : your pseudo/password is incorrect";
+}
+}
+else {
+?>
+
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
@@ -20,7 +64,7 @@
 
 
 
-    
+
 
 
     <body>
@@ -64,7 +108,7 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on">
+                            <form  action="signin.php" autocomplete="on">
                                 <h1> Sign up </h1>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
