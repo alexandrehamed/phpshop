@@ -16,9 +16,24 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Lora|Francois+One|Montserrat+Alternates" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-
+    <link rel="stylesheet" href="css/store.css">
 <?php include_once("header.php")?>
+    <?php
+
+    $bdd = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8','root','root');
+
+    $jeux = $bdd->query('SELECT nomJeux,image,resume FROM jeux ORDER BY id DESC');
+    if(isset($_GET['q']) AND !empty($_GET['q'])) {
+       $q = htmlspecialchars($_GET['q']);
+       $jeux = $bdd->query('SELECT nomJeux,image,resume FROM jeux WHERE nomJeux LIKE "%'.$q.'%" ORDER BY id DESC');
+       /*if($jeux->rowCount() == 0) {
+          $jeux = $bdd->query('SELECT nom FROM jeux WHERE CONCAT(nom, contenu) LIKE "%'.$q.'%" ORDER BY id DESC');
+       }
+       */
+    //$monImage = $bdd->query('SELECT image FROM jeux WHERE nomJeux = "mario kart"');
+    }
+    ?>
+
 
 </head>
 
@@ -91,60 +106,33 @@
             <br>
 
 
-        <input class="margin_t_30" type="search" placeholder="jeux"" title="Search" />
-        <?php
-header('Content-Type: text/html; charset=UTF-8');
+            <form method="GET">
+               <input type="search" name="q" placeholder="Recherche..." />
+               <input type="submit" value="Valider" />
+            </form>
+        <?php if($jeux->rowCount() > 0) { ?>
+           <ul>
+           <?php while($a = $jeux->fetch()) { ?>
+             <th>
+              <td><li><?= $a['nomJeux'] ?></li></td>
+              
+              <td><li><a href="jeux.php?nomJeux=<?php echo $a['nomJeux'];?>">
+                        <img src=<?= $a['image'] ?>  />
+                        <strong><?= $a['nomJeux'] ?></strong>
+                      </a>
+                  </li>
+              </td>
+              <td><li><?= $a['resume'] ?></li></td>
+            </th>
+              <br>
+           <?php } ?>
+           </ul>
+        <?php } else { ?>
+        Aucun résultat pour : <?= $q ?>...
+        <?php } ?>
 
-// connexion bdd
-$BDD_hote = 'localhost';
-$BDD_bd = 'mydb';
-$BDD_utilisateur = 'pseudo';
-$BDD_mot_passe = 'mdp';
 
-if(isset($_POST['search'])) {
 
-$chainesearch = addslashes($_POST['search']);
-
-echo 'Vous avez recherché : ' . $chainesearch . '<br />';
-
-	try{
-		$bdd = new PDO('mysql:host='.$BDD_hote.';dbname='.$BDD_bd, $BDD_utilisateur, $BDD_mot_passe);
-		$bdd->exec("SET CHARACTER SET utf8");
-		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-	}
-		catch(PDOException $e){
-		echo 'Erreur : '.$e->getMessage();
-		echo 'N° : '.$e->getCode();
-	}
-
-	$requete = "SELECT * from jeux WHERE nom LIKE '". $chainesearch;
-
-    // Exécution de la requête SQL
-    $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
-    echo 'Les résultats de recherche sont : <br />';
-    while($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
-	echo $donnees['pseudo'] .'<br />';
-	}
-
-}
-
-var_dump ($requete);
-
-?>
-            <div class="box_games">
-                <div class="row border_style">
-                    <div class="col-md-3 col-sm-3 col-sm-offset-1"><img src="img/ms.jpg" class="img-responsive"></div>
-                    <div class="col-md-8 col-sm-8">
-                        <h2>Mass Effect Andreomeda</h2>
-                        <br>
-                        <p class="form_p">Nulla sit amet euismod eros. Donec commodo laoreet ex at blandit. Quisque nisi nulla, blandit id ligula sit amet, auctor consequat velit. Nullam lacus risus, faucibus pharetra nulla at, accumsan rutrum enim. Mauris eros ligula, aliquam nec facilisis nec, pharetra consequat arcu.Aenean ultricies nec sapien non hendrerit. Quisque ullamcorper lectus ac pharetra semper. Sed varius magna erat, eget viverra libero cursus ut. Cras quis massa consectetur, dignissim tellus et, rutrum urna. </p>
-                        <div class="row margin_t_20">
-                            <div class="col-xs-3 col-xs-offset-1"><span class="badge" style="padding: 15px"><img src="glyphicons_free/glyphicons/png/glyphicons-322-gamepad.png"> : 50h</span></div>
-                            <div class="col-xs-4 col-xs-offset-1"><button class="btn btn-lg btn-success">JOUER</button></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="col-md-3">
             <button type="button" class="amis margin_t_50" data-toggle="modal" data-target="#myModal">
@@ -159,7 +147,7 @@ var_dump ($requete);
                             <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                         </div>
                         <div class="modal-body">
-                            <?php echo($amis)?>
+                            ICI liste amis
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
