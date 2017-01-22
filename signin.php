@@ -1,4 +1,4 @@
-<?php include 'inscription.traitement.php'; ?>
+<?php include 'signin.traitement.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="icon" href="../../favicon.ico">
-    <title>Steam Like</title>
+    <title>STIIM</title>
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
@@ -24,11 +24,11 @@
             <div class="inner">
               <p class="flotte">
               </p>
-              <h3 class="masthead-brand"><?php echo $_SESSION['pseudo'];?></h3>
+          
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="login.php">Login</a></li>
-                  <li class="active"><a href="inscription.php">Inscription</a></li>
+                  <li class="active"><a href="signin.php">Inscription</a></li>
                 </ul>
               </nav>
             </div>
@@ -39,7 +39,7 @@
           <div class="shooting-stars"></div>
           <?php ?>
           <div class="col-lg-12 formulaire">
-            <form method="post" id="form" autocomplete="off" action="inscription.php" >
+            <form method="post" id="form" autocomplete="off" action="signin.php" >
               <h1 id="titre">Inscription</h1>
               <?php
               //var_dump($aError);exit();
@@ -77,11 +77,6 @@
 
           </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Site customisé par <a href="http://www.iim.fr/">l'IIM</a>.</p>
-            </div>
-          </div>
 
         </div>
 
@@ -102,8 +97,5 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
   <footer>
-    <div class="text-center">
-      <h4>Site intégré par L'iim</h4>
-    </div>
   </footer>
 </html>

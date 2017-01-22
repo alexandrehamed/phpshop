@@ -13,7 +13,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 
     <title>Steam Like</title>
     <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/profil.css" rel="stylesheet">
 
     <link href="style.css" rel="stylesheet">
 
@@ -28,7 +28,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand"><?php echo $_SESSION['pseudo'];?></h3>
+              <h1 class="masthead-brand text-center"><?php echo $_SESSION['pseudo'];?>, Voici votre page profil</h1>
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="index.php">Accueil</a></li>
@@ -49,13 +49,14 @@ if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
           <div class="inner cover ami">
             <div class="row">
               <div class="col-lg-7">
-                <h1 class="cover-heading"> <?php echo $aMoi[0]['pseudo']; ?></h1>
+                <h2> Vos informations </h2>
+                <h3 class="cover-heading">Pseudo : <?php echo $aMoi[0]['pseudo']; ?></h3>
               </div>
               <div class="col-lg-12">
-                <h1 class="cover-heading"> <?php echo $aMoi[0]['email']; ?></h1>
+                <h3 class="cover-heading">E-Mail : <?php echo $aMoi[0]['email']; ?></h3>
               </div>
-              <div class="col-lg-7" style="margin-top:10%;">
-                <a href="modifier.php" style="color:red">Modifier mon profil</a>
+              <div class="col-lg-7" style="margin-top:5%;">
+                <a href="modifier.php" style="color:orange">Modifier mon profil</a>
               </div>
             </div>
 

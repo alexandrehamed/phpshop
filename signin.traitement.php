@@ -13,16 +13,16 @@ if ( empty( $_POST['inscription'] ) ) {
 	$aError					=	array();
 // Récupération de l'utilisateur
 	$sUser					=	'
-		SELECT user_email
-		FROM Users
-		where user_email = :email
+		SELECT email
+		FROM users
+		where email = :email
 	';
 	$aParamUser				=	[
 		':email'			=>	$email,
 	];
 // ---
 // Préparation et execution de la requête
-	$oQuery					=	$bdd->prepare( $sUser );
+	$oQuery					=	$dbh->prepare( $sUser );
 	$oQuery->execute( $aParamUser );
 	$aUser					=	$oQuery->fetch();
 // ---
@@ -68,9 +68,9 @@ if ( empty( $_POST['inscription'] ) ) {
 
 		$sQuery				=	'
 			INSERT INTO
-      `Users`
+      `users`
 					(
-						`user_pseudo`,`user_email`,`user_mdp`
+						`pseudo`,`email`,`password`
 					)
 			VALUES
 				(
@@ -84,7 +84,7 @@ if ( empty( $_POST['inscription'] ) ) {
 		':password'				=>	$password,
 		];
 
-		$oQuery	=	$bdd->prepare ( $sQuery );
+		$oQuery	=	$dbh->prepare ( $sQuery );
 		$bReturn = $oQuery->execute( $aParamUser );
 		if ($bReturn == 0 ) {
 		$aError[]			=		'Une erreur est survenue veuillez contacter un adminitrateur';

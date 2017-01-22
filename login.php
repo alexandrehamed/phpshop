@@ -28,7 +28,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="login.php">Login</a></li>
-                  <li><a href="inscription.php">Inscription</a></li>
+                  <li><a href="signin.php">Inscription</a></li>
                 </ul>
               </nav>
             </div>
@@ -67,7 +67,7 @@
 
             </form>
             <div id="blank" class=" col-lg-4 col-lg-offset-4 bouton">
-              <button type="button"  class="btn btn-info"><a href="inscription.php">Pas de compte ?</a></button>
+              <button type="button"  class="btn btn-info"><a href="signin.php">Pas de compte ?</a></button>
             </div>
           </div>
 
@@ -89,9 +89,5 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-  <footer>
-    <div class="text-center">
-      <h4>Site intégré par L'iim</h4>
-    </div>
-  </footer>
+
 </html>
