@@ -1,71 +1,109 @@
-<?php
-      session_start();
-      include ("db.php");
+<?php include 'inscription.traitement.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Steam Like</title>
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+<div class="container">
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <p class="flotte">
+              </p>
+              <h3 class="masthead-brand"><?php echo $_SESSION['pseudo'];?></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="login.php">Login</a></li>
+                  <li class="active"><a href="inscription.php">Inscription</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="stars"></div>
+          <div class="stars1"></div>
+          <div class="stars2"></div>
+          <div class="shooting-stars"></div>
+          <?php ?>
+          <div class="col-lg-12 formulaire">
+            <form method="post" id="form" autocomplete="off" action="inscription.php" >
+              <h1 id="titre">Inscription</h1>
+              <?php
+              //var_dump($aError);exit();
+              if ( !empty($aError) ) {
+
+                ?>
+              <div class="erreurs">
+                <?php
+                  foreach( $aError as $iError ) {
+                    ?> <div class="logerreur"><?php echo $iError; ?> </div> <?php
+                  }
+                ?>
+              </div>
+              <?php } ?>
+              <div class="col-lg-6 col-lg-offset-3 champ">
+                <input type="text" id="email" name="pseudo" placeholder="Nom de compte"/>
+              </div>
+              <div class=" col-lg-6 col-lg-offset-3 champ">
+                <input type="password" id="password" name="password" placeholder="Mot de Passe"/>
+              </div>
+              <div class=" col-lg-6 col-lg-offset-3 champ">
+                <input type="password" id="password" name="confirme_password" placeholder="Confirmer le mot de passe"/>
+              </div>
+              <div class=" col-lg-6 col-lg-offset-3 champ">
+                <input id="email" type="email" name="email"  placeholder="Email"/>
+              </div>
+              <div class=" col-lg-6 col-lg-offset-3 champ">
+                <input id="email" type="email" name="confirme_email"  placeholder=" Confirmer l'Email"/>
+              </div>
+              <div class=" col-lg-4 col-lg-offset-4 bouton">
+                <input id="connexion" type="submit" name="inscription" value="Inscription" />
+              </div>
+
+            </form>
+
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Site customisé par <a href="http://www.iim.fr/">l'IIM</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
-
-		if (isset($_POST["pseudo"]) &&
-			isset($_POST["password"]) &&
-			isset($_POST["email"]))  {
-
-
-	$pseudo = htmlspecialchars($_POST["pseudo"]);
-	$password = htmlspecialchars($_POST["mdp"]);
-	$email = htmlspecialchars($_POST["email"]);
-	// préparation de la requête : est-ce qu'un membre avec ce pseudo ou cet email existe déjà?
-	$request = $db->prepare("SELECT id FROM members WHERE pseudo LIKE :pseudo OR email LIKE :email");
-	// execution de la requête : on remplace :pseudo et :email par les valeurs entrées dans le formulaire
-	$request->execute(
-		array(
-			"pseudo" => $pseudo,
-			"email" => $email
-		)
-	);
-	// on récupère tous les membres correspondant ) la requête
-	$members = $request->fetchAll();
-	// sil il y en a 0, c'est qu'aucun membre avec ces identifiants existe, on peut le créer
-	if (sizeof($members) == 0){
-
-		// on code ici l'insertion
-		// par défaut, la date d'inscription est maintenant (NOW()), et l'utilisateur n'est pas admin(0)
-		$request = $db->prepare("INSERT INTO members (pseudo, password, email, inscription_date, is_admin)
-								 Values (:pseudo, :password, :email, NOW(), 0)");
-	$request->execute(
-		array(
-			"pseudo" => $pseudo,
-			"password" => $password,
-			"email" => $email
-			)
-		);
-$request = $db->prepare("SELECT id, is_admin FROM members WHERE pseudo LIKE :pseudo AND password = :password");
-	$request->execute(
-		array(
-			"pseudo" => $pseudo,
-			"password" => $password
-		)
-	);
-//fetchAll renvoie un tableau avec tous les membres correspondant à la requête
-$members = $request->fetchAll();
-// si il y en a plus de 0, c'est qu'un membre avec ces identifiants existe. On le connecte.
-if (sizeof($members) > 0) {
-	//on récupère l'id du membre (le[0] est le premier du tableau)
-	//(et le seul puisqu'on n'autorise pas les doublons)
-	$id_member = $members[0]["id"];
-
-	//on crée la variable de session qui nou permettra de savoir qu'il est connecté
-	$_SESSION["id_member"] = $id_member;
-	$is_admin = $members[0]["is_admin"];
-
-	//on crée la variable de session qui nou permettra de savoir qu'il est connecté
-	$_SESSION["is_admin"] = $is_admin;
-	header("Location:index.php"); //on redirige vers la home
-}
-}
-else{   //sinon on ne veut pas de doublon donc on ne le crée pas
-		echo"Error : this member already exists";
-		?> <a href="signin.php">Try again</a>
-		<?php
-	}
-}
-else {
-?>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+  <footer>
+    <div class="text-center">
+      <h4>Site intégré par L'iim</h4>
+    </div>
+  </footer>
+</html>

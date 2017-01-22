@@ -1,3 +1,5 @@
+<?php include "db.php";
+ include "header.php";?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
@@ -17,7 +19,6 @@
   <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Passion+One|Cinzel" rel="stylesheet">
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 
 
@@ -25,39 +26,38 @@
 </head>
 
 
-
-
-
 <body>
 
-<?php include "header.php";?>
 
-<<<<<<< HEAD
+
+
+<div class="site-wrapper">
+
   <div class="site-wrapper-inner">
 
-    <div class="container-fluid">
+
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-xs-0 col-md-offset-2 col-xs-offset-0">
+          <div class="col-md-6 col-md-offset-2 ">
             <div class="masthead clearfix">
               <div class="inner">
-                <h3 class="masthead-brand">Steam</h3>
+                <h3 class="masthead-brand"></h3>
                 <nav>
                   <ul class="nav masthead-nav">
                     <li class="active"><a href="#">Accueil</a></li>
-                    <li><a href="#">Magasin</a></li>
+                    <li><a href="magasin.php">Magasin</a></li>
                     <li><a href="#">Bibliotheque</a></li>
-                    <li><a href="#" class="ion-ios-cart"></a></li>
-                    <li><a href="#" class="ion-log-out"></a></li>
+                    <li><a href="#">panier</a></li>
+                    <li><a href="#">Deconnexion</a></li>
                   </ul>
                 </nav>
               </div>
             </div>
           </div>
         </div>
-    </div>
-=======
->>>>>>> alex
+      </div>
+
+
 
       <div class="container-fluid">
         <div class="row">
@@ -80,7 +80,7 @@
                             </div>
                           </section>
                         </div></div>
-                      <div class="col-sm-5 col-xs-offset-1""><section>
+                      <div class="col-sm-5 col-xs-offset-1"><section>
                           <div class="sup-container">
                             <input type="submit" value="magasin" id="bu-bu"/>
                             <div class="ease"></div>
@@ -89,21 +89,12 @@
                       </div>
                     </p>
                   </div>
-
-
-
-
       </div>
           <div class="col-md-offset-1 col-md-2 " style="padding: 0px;">
             <img class=" form_img_2" src="img/forhonor.jpg">
           </div>
-
     </div>
-
-
   </div>
-
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

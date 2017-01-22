@@ -1,6 +1,6 @@
 <?php
 require_once ('db.php');
-include 'profil.traitement.php';
+include 'modifier.traitement.php';
 if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 ?>
 <!DOCTYPE html>
@@ -47,17 +47,14 @@ if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
           <div class="stars2"></div>
           <div class="shooting-stars"></div>
           <div class="inner cover ami">
-            <div class="row">
-              <div class="col-lg-7">
-                <h1 class="cover-heading"> <?php echo $aMoi[0]['pseudo']; ?></h1>
+            <form class="" action="modifier.php" method="post">
+                  <input  type="text" name="pseudo" value="<?php echo $aMoi[0]['pseudo']; ?>"></br>
+                  <input  type="text" name="email" value="<?php echo $aMoi[0]['email']; ?>"></br>
+                <div class="col-lg-7" style="margin-top:5%;">
+                  <input type="submit" name="modifier" value="modifier"  >
+                </div>
               </div>
-              <div class="col-lg-12">
-                <h1 class="cover-heading"> <?php echo $aMoi[0]['email']; ?></h1>
-              </div>
-              <div class="col-lg-7" style="margin-top:10%;">
-                <a href="modifier.php" style="color:red">Modifier mon profil</a>
-              </div>
-            </div>
+            </form>
 
 
           </div>

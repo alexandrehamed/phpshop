@@ -93,7 +93,46 @@
             <br>
 
 
-        <input class="margin_t_30" type="search" placeholder="jeux"" title="Search" />
+        <input class="margin_t_30" type="search" placeholder="jeux"" title="Search"/>
+                                      <?php
+                              header('Content-Type: text/html; charset=UTF-8');
+
+                              // connexion bdd
+                              $BDD_hote = 'localhost';
+                              $BDD_bd = 'auto';
+                              $BDD_utilisateur = 'root';
+                              $BDD_mot_passe = 'root';
+
+                              if(isset($_POST['search'])) {
+
+                              $chainesearch = addslashes($_POST['search']);
+
+                              echo 'Vous avez recherché : ' . $chainesearch . '<br />';
+
+                              try{
+                                $bdd = new PDO('mysql:host='.$BDD_hote.';dbname='.$BDD_bd, $BDD_utilisateur, $BDD_mot_passe);
+                                $bdd->exec("SET CHARACTER SET utf8");
+                                $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+                              }
+                                catch(PDOException $e){
+                                echo 'Erreur : '.$e->getMessage();
+                                echo 'N° : '.$e->getCode();
+                              }
+
+                              $requete = "SELECT * from departement WHERE departement_nom LIKE '". $chainesearch
+                              ."%' OR departement_nom_maj LIKE '". $chainesearch
+                              ."%' OR departement_slug LIKE '". $chainesearch ."%'";
+
+                                // Exécution de la requête SQL
+                                $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
+                                echo 'Les résultats de recherche sont : <br />';
+                                while($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
+                              echo $donnees['departement_nom'] .'<br />';
+                              }
+
+                              }
+
+                              ?>
             <div class="box_games">
                 <div class="row border_style">
                     <div class="col-md-3 col-sm-3 col-sm-offset-1"><img src="img/ms.jpg" class="img-responsive"></div>
