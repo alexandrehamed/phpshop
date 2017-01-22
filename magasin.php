@@ -50,20 +50,42 @@ include ('db.php')
 
         <div class="col-md-6 col-md-offset-3 ">
 
+            <div class="dropdown pos" style="position: absolute">
+                <form method="post" action="magasin.php">
+                <button class=" dropdown-toggle btn-5" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Catégorie
+                    <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#" ><input name="categorie" type="submit" value="strategie"/>strategie</a></li>
+                    <li><a href="#"><input name="categorie" type="submit" value="rpg"/>rpg</a></li>
+                    <li><a href="#"><input name="categorie" type="submit" value="fps"/>fps</a></li>
+                </ul>
+                    <input name="categorie" type="submit" value="rpg"/>
+                </form>
+            </div>
+<br>
                 <div class="gallery">
 
+
+
                     <?php
-                    $request= $db->prepare("
-                  SELECT jeux.id, jeux.nom, jeux.resume, jeux.prix, jeux.image, jeux.pegi, categorie.nom FROM jeux INNER JOIN categorie ON jeux.categorie = categorie.id ");
-                    $request->execute(
-                        array(
-                    ));
+                    if (isset($_POST["categorie"])){
+                        $categorie =htmlspecialchars($_POST["categorie"]);
+                        $request=$db->prepare("SELECT * FROM jeux ");
+                        $request->execute(
+                         array(
+                         ));
+                    }
+                    else{echo "jk";}
 
                     ?>
-                    <?php
-                    while ($data = $request->fetch()){
+                        <?php
+            while ($data = $request->fetch()){
+                ?>
+                        ?>
 
-                    ?>
                     <ul>
                         <li>
                             <h2><?php echo $data ["nom"];?></h2>
@@ -73,7 +95,8 @@ include ('db.php')
                             </a>
                         </li>
                         <?php
-                        }
+                       }
+
                         $request->closeCursor();?>
 
 
