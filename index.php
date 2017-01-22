@@ -22,6 +22,7 @@ include "db.php"
   <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Passion+One|Cinzel" rel="stylesheet">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 
 
@@ -37,6 +38,7 @@ include "db.php"
 
 <?php include "header.php";?>
 
+<<<<<<< HEAD
 <div class="site-wrapper">
 
   <div class="site-wrapper-inner">
@@ -45,25 +47,47 @@ include "db.php"
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-md-offset-2 ">
+=======
+<<<<<<< HEAD
+  <div class="site-wrapper-inner">
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-xs-0 col-md-offset-2 col-xs-offset-0">
+>>>>>>> bdd
             <div class="masthead clearfix">
               <div class="inner">
                 <h3 class="masthead-brand">Steam</h3>
                 <nav>
                   <ul class="nav masthead-nav">
                     <li class="active"><a href="#">Accueil</a></li>
+<<<<<<< HEAD
                     <li><a href="magasin.php">Magasin</a></li>
                     <li><a href="#">Bibliotheque</a></li>
                     <li><a href="#">panier</a></li>
                     <li><a href="#">Deconnexion</a></li>
+=======
+                    <li><a href="#">Magasin</a></li>
+                    <li><a href="#">Bibliotheque</a></li>
+                    <li><a href="#" class="ion-ios-cart"></a></li>
+                    <li><a href="#" class="ion-log-out"></a></li>
+>>>>>>> bdd
                   </ul>
                 </nav>
               </div>
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
 >>>>>>> b2d2490d8d8dcd8a7b31498bc022f64ee75e04b6
 
+=======
+    </div>
+=======
+>>>>>>> alex
+>>>>>>> bdd
 
       <div class="container-fluid">
         <div class="row">

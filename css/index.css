@@ -212,6 +212,17 @@ body{
     margin-top: 0px !important;
 }
 
+<<<<<<< HEAD
+.ion-ios-cart{
+  font-size: 30px !important;
+}
+
+
+.ion-log-out{
+  margin-left: px !important;
+  font-size: 30px !important;
+}
+=======
 .z-index-1 {
     position: absolute;
 
@@ -381,3 +392,4 @@ section #bu-bu:hover
 }
 
 /* End Button [2] */
+>>>>>>> alex
