@@ -28,7 +28,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="login.php">Login</a></li>
-                  <li><a href="inscription.php">Inscription</a></li>
+                  <li><a href="signin.php">Inscription</a></li>
                 </ul>
               </nav>
             </div>

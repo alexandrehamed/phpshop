@@ -1,4 +1,4 @@
-<?php include 'inscription.traitement.php'; ?>
+<?php include 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +28,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="login.php">Login</a></li>
-                  <li class="active"><a href="inscription.php">Inscription</a></li>
+                  <li class="active"><a href="signin.php">Inscription</a></li>
                 </ul>
               </nav>
             </div>
@@ -39,7 +39,7 @@
           <div class="shooting-stars"></div>
           <?php ?>
           <div class="col-lg-12 formulaire">
-            <form method="post" id="form" autocomplete="off" action="inscription.php" >
+            <form method="post" id="form" autocomplete="off" action="signin.traitement.php" >
               <h1 id="titre">Inscription</h1>
               <?php
               //var_dump($aError);exit();
