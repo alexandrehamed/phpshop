@@ -14,7 +14,11 @@ if ( empty( $_POST['inscription'] ) ) {
 // Récupération de l'utilisateur
 	$sUser					=	'
 		SELECT email
+<<<<<<< HEAD
 		FROM Users
+=======
+		FROM users
+>>>>>>> 97eab93f464e6c24bc0ea4c79dedd428be22a8fc
 		where email = :email
 	';
 	$aParamUser				=	[
@@ -68,7 +72,7 @@ if ( empty( $_POST['inscription'] ) ) {
 
 		$sQuery				=	'
 			INSERT INTO
-      `Users`
+      `users`
 					(
 						`pseudo`,`email`,`password`
 					)
