@@ -53,10 +53,10 @@ $jeux = $bdd->query('SELECT * FROM jeux WHERE nomJeux = "'.$_GET['nomJeux'].'"')
 </tr>
 <tr>
 <th></th>
-<td><a class="" action="jeux.php?id=<?php echo $_GET['id'];?>" method="post">
+<td><a class="" action="panier.php?id=<?php echo $_GET['id'];?>">
       <input type="submit" name="inserer" value="Ajouter au panier">
     </a>
-
+</t
 </form>
 </tr>
 
